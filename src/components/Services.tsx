@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import workersFacility from "@/assets/workers-facility.jpg";
+import tilingSpecialist from "@/assets/tiling-specialist.jpg";
 import { Paintbrush, Building, Palette, Wrench, Sparkles } from "lucide-react";
 
 const Services = () => {
@@ -83,6 +84,26 @@ const Services = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+
+          {/* Flooring Specialist Section */}
+          <div className="relative overflow-hidden rounded-lg shadow-gold mt-16 animate-fade-in-up">
+            <img
+              src={tilingSpecialist}
+              alt="Professional Floor Tiling Specialist"
+              className="w-full h-96 object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-l from-background/90 to-transparent flex items-center justify-end p-8 md:p-12">
+              <div className="max-w-lg text-right">
+                <h3 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+                  Flooring Specialists
+                </h3>
+                <p className="text-lg text-foreground">
+                  Specialist in Timber, ceramic, marble flooring, glass and stone tiling and regrouting. 
+                  Our expert craftsmen deliver precision and quality in every tile laid.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
