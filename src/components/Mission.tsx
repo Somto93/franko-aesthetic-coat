@@ -37,6 +37,20 @@ const Mission = () => {
             <div className="w-24 h-1 bg-primary mx-auto mb-6"></div>
           </div>
 
+          {/* Company Background */}
+          <div className="mb-12 animate-fade-in-up">
+            <Card className="bg-card border-border shadow-gold">
+              <CardContent className="p-8 md:p-12">
+                <p className="text-lg md:text-xl text-foreground leading-relaxed text-center mb-6">
+                  <span className="text-primary font-semibold">FRANKO PAINTS AND PAINTING SERVICES NIGERIA</span> is an indigenous paint manufacturing company{" "}
+                  <span className="text-primary font-semibold">incorporated in February 2019</span> and situated at{" "}
+                  <span className="text-primary font-semibold">Umuaka, Njaba LGA, Imo State</span>. We specialize in the manufacturing of{" "}
+                  <span className="text-primary font-semibold">high quality and luxurious Franko paint products</span>.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
           {/* Mission Statement */}
           <div className="mb-16 animate-fade-in-up">
             <Card className="bg-card border-border shadow-gold">

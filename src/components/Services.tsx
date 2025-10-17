@@ -1,28 +1,33 @@
 import { Card, CardContent } from "@/components/ui/card";
 import workersFacility from "@/assets/workers-facility.jpg";
-import { Paintbrush, Building, Palette, Wrench } from "lucide-react";
+import { Paintbrush, Building, Palette, Wrench, Sparkles } from "lucide-react";
 
 const Services = () => {
   const services = [
     {
+      icon: Wrench,
+      title: "Screeding Services",
+      description: "Professional screeding for smooth and durable surfaces.",
+    },
+    {
       icon: Building,
-      title: "Building Painting",
-      description: "Complete exterior and interior painting for residential and commercial buildings.",
+      title: "POP Services",
+      description: "Expert Plaster of Paris installation and finishing.",
     },
     {
       icon: Paintbrush,
-      title: "Professional Application",
-      description: "Expert painters ensuring perfect finish and long-lasting results.",
+      title: "Professional Painting and Artistic Design",
+      description: "Expert painting services with creative artistic designs for all spaces.",
+    },
+    {
+      icon: Sparkles,
+      title: "Industrial Cleaning Services",
+      description: "Comprehensive cleaning solutions for industrial and commercial facilities.",
     },
     {
       icon: Palette,
-      title: "Color Consultation",
-      description: "Professional advice on color selection and design to transform your space.",
-    },
-    {
-      icon: Wrench,
-      title: "Surface Preparation",
-      description: "Thorough preparation ensuring optimal paint adhesion and durability.",
+      title: "Floor Tiling Services",
+      description: "Professional floor tiling installation for lasting beauty and durability.",
     },
   ];
 
@@ -62,7 +67,7 @@ const Services = () => {
           </div>
 
           {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <Card
                 key={index}
@@ -70,17 +75,11 @@ const Services = () => {
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <CardContent className="p-8">
-                  <div className="flex items-start space-x-4">
-                    <div className="flex-shrink-0">
-                      <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center">
-                        <service.icon className="w-7 h-7 text-primary" />
-                      </div>
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-semibold text-foreground mb-3">{service.title}</h3>
-                      <p className="text-muted-foreground text-lg">{service.description}</p>
-                    </div>
+                  <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                    <service.icon className="w-7 h-7 text-primary" />
                   </div>
+                  <h3 className="text-xl font-semibold text-foreground mb-3">{service.title}</h3>
+                  <p className="text-muted-foreground">{service.description}</p>
                 </CardContent>
               </Card>
             ))}

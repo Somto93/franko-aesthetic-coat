@@ -5,24 +5,14 @@ import { Sparkles, Droplet, Shield } from "lucide-react";
 
 const Products = () => {
   const products = [
-    {
-      name: "Matte Luxury Paint",
-      description: "Premium matte finish for elegant interiors",
-      features: ["Long-lasting", "Easy application", "Eco-friendly"],
-      icon: Sparkles,
-    },
-    {
-      name: "High Quality Emulsion",
-      description: "Perfect coverage for all wall types",
-      features: ["Weather-resistant", "Quick drying", "Smooth finish"],
-      icon: Droplet,
-    },
-    {
-      name: "Professional Grade",
-      description: "Industrial strength for commercial projects",
-      features: ["Extra durable", "Fade-resistant", "High coverage"],
-      icon: Shield,
-    },
+    { name: "Franko Emulsion Paint", icon: Droplet },
+    { name: "Franko Texture Paint", icon: Sparkles },
+    { name: "Franko Mineral Stone Paint", icon: Shield },
+    { name: "Franko Gloss Paint", icon: Sparkles },
+    { name: "Franko Silk/Sateen Paint", icon: Droplet },
+    { name: "Franko Matte Paint", icon: Shield },
+    { name: "Franko Screeding POP Paint", icon: Sparkles },
+    { name: "Franko Putty Paint", icon: Droplet },
   ];
 
   return (
@@ -71,27 +61,18 @@ const Products = () => {
           </div>
 
           {/* Product Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {products.map((product, index) => (
               <Card
                 key={index}
                 className="bg-card border-border hover:shadow-gold transition-all duration-300 hover:-translate-y-2 animate-fade-in-up"
-                style={{ animationDelay: `${index * 100}ms` }}
+                style={{ animationDelay: `${index * 50}ms` }}
               >
-                <CardContent className="p-6">
-                  <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                <CardContent className="p-6 text-center">
+                  <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-4 mx-auto">
                     <product.icon className="w-8 h-8 text-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground mb-2">{product.name}</h3>
-                  <p className="text-muted-foreground mb-4">{product.description}</p>
-                  <ul className="space-y-2">
-                    {product.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-foreground">
-                        <span className="w-2 h-2 bg-accent rounded-full mr-2"></span>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
+                  <h3 className="text-lg font-bold text-foreground">{product.name}</h3>
                 </CardContent>
               </Card>
             ))}

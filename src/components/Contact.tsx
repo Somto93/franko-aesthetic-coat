@@ -1,27 +1,25 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, MapPin, Facebook, Twitter, Instagram } from "lucide-react";
 
 const Contact = () => {
-  const contactInfo = [
+  const offices = [
     {
-      icon: Phone,
-      title: "Phone",
-      details: "+234 XXX XXX XXXX",
-      action: "Call Us",
+      type: "Head Office",
+      address: "Umuduruorji Acharaji-Akah Beside Umuaka Timbre Market Along Orlu-Owerri Road, Umuaka Njaba LGA, Imo State, Nigeria",
+      phones: ["+234 806 925 1915", "+234 701 061 4310"],
     },
     {
-      icon: Mail,
-      title: "Email",
-      details: "info@frankopaint.com",
-      action: "Send Email",
+      type: "Branch Office",
+      address: "Central School Umuaka (Umuaka Football Stadium) Beside Cotton Lane Along Orlu-Owerri Road, Umuaka, Imo State, Nigeria",
+      phones: ["+234 906 649 5013", "+234 806 925 1915"],
     },
-    {
-      icon: MapPin,
-      title: "Location",
-      details: "Nigeria",
-      action: "Get Directions",
-    },
+  ];
+
+  const socialMedia = [
+    { icon: Facebook, name: "Facebook", handle: "@frankopaintsnigeria", url: "https://facebook.com/frankopaintsnigeria" },
+    { icon: Twitter, name: "X (Twitter)", handle: "@frankopaints", url: "https://twitter.com/frankopaints" },
+    { icon: Instagram, name: "Instagram", handle: "@frankopaintsnigeria", url: "https://instagram.com/frankopaintsnigeria" },
   ];
 
   return (
@@ -39,26 +37,64 @@ const Contact = () => {
             </p>
           </div>
 
-          {/* Contact Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            {contactInfo.map((info, index) => (
+          {/* Office Locations */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            {offices.map((office, index) => (
               <Card
                 key={index}
-                className="bg-card border-border hover:shadow-gold transition-all duration-300 hover:-translate-y-1 animate-fade-in-up"
+                className="bg-card border-border hover:shadow-gold transition-all duration-300 animate-fade-in-up"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <CardContent className="p-8 text-center">
-                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                    <info.icon className="w-8 h-8 text-primary" />
+                <CardContent className="p-8">
+                  <div className="flex items-start space-x-4 mb-4">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <MapPin className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-foreground mb-2">{office.type}</h3>
+                      <p className="text-muted-foreground text-sm mb-4">{office.address}</p>
+                      <div className="space-y-2">
+                        {office.phones.map((phone, idx) => (
+                          <div key={idx} className="flex items-center text-foreground">
+                            <Phone className="w-4 h-4 text-primary mr-2" />
+                            <a href={`tel:${phone}`} className="hover:text-primary transition-colors">{phone}</a>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">{info.title}</h3>
-                  <p className="text-muted-foreground mb-4">{info.details}</p>
-                  <Button variant="outline" className="border-primary text-primary hover:bg-primary/10">
-                    {info.action}
-                  </Button>
                 </CardContent>
               </Card>
             ))}
+          </div>
+
+          {/* Social Media */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-bold text-center text-foreground mb-8">Follow Us</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {socialMedia.map((social, index) => (
+                <Card
+                  key={index}
+                  className="bg-card border-border hover:shadow-gold transition-all duration-300 hover:-translate-y-1 animate-fade-in-up"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <CardContent className="p-6 text-center">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                      <social.icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <h4 className="text-lg font-semibold text-foreground mb-1">{social.name}</h4>
+                    <a 
+                      href={social.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      {social.handle}
+                    </a>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
 
           {/* CTA Card */}
