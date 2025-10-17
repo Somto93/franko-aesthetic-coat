@@ -27,7 +27,7 @@ const Services = () => {
     },
     {
       icon: Palette,
-      title: "Floor Tiling Services",
+      title: "Floor and Wall Tiling Services",
       description: "Professional floor tiling installation for lasting beauty and durability.",
     },
   ];
