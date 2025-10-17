@@ -27,7 +27,7 @@ const Hero = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
-            Experience the creative beauty of professional painting services and high-quality paint products
+            Transform your house, office or building with quality paints. We give your building flooring and walls professional tiling that last a taste of time.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
