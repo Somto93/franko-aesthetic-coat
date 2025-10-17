@@ -45,6 +45,7 @@ const Footer = () => {
                 <li>Professional Application</li>
                 <li>Color Consultation</li>
                 <li>Surface Preparation</li>
+                <li>Floor and Wall Rebuild</li>
               </ul>
             </div>
           </div>
