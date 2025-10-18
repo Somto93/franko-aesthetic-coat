@@ -23,7 +23,7 @@ const Hero = () => {
           <h1 className="text-5xl md:text-7xl font-bold leading-tight">
             <span className="text-gradient-gold">Transform Your Space</span>
             <br />
-            <span className="text-foreground">With Premium Paints</span>
+            <span className="text-foreground">With Franko Premium Paints</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
